@@ -15,18 +15,18 @@ export default function Home() {
     const [ movies, setMovies ] = useState<any[]>([]);
 
     useEffect( () => {
-            fetch(API_URL_POPULAR, {
-                headers: {
-                    "Content-Type": "application/json",
-                    "X-API-KEY": API_Key,
-                },
-            })
-                .then(res => res.json())
-                .then((data) => {
-                    console.log(data);
-                    setMovies(data.films);
-                });
-
+            // fetch(API_URL_POPULAR, {
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //         "X-API-KEY": API_Key,
+            //     },
+            // })
+            //     .then(res => res.json())
+            //     .then((data) => {
+            //         console.log(data);
+            //         setMovies(data.films);
+            //     });
+            console.log('Hello')
 
         }, []);
     return (<>
