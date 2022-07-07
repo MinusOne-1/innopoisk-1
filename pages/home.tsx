@@ -12,7 +12,7 @@ const API_URL_SEARCH =
 
 
 export default function Home() {
-    const [ movies, setMovies ] = useState([]);
+    const [ movies, setMovies ] = useState<any[]>([]);
 
     useEffect( () => {
             fetch(API_URL_POPULAR, {
@@ -42,5 +42,6 @@ export default function Home() {
         </>
 
     );
+
 
 }
