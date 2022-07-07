@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fec91a7a-2410-477f-acd1-05e38d1ed1ab" name="Changes" comment="add: basic design and API implementation">
-      <change afterPath="$PROJECT_DIR$/.prettierrc.js" afterDir="false" />
+    <list default="true" id="fec91a7a-2410-477f-acd1-05e38d1ed1ab" name="Changes" comment="setup: prettier">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +60,18 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -103,7 +111,21 @@
       <option name="project" value="LOCAL" />
       <updated>1657117097571</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="setup: ESlinter with Airbnb configs">
+      <created>1657222498591</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657222498591</updated>
+    </task>
+    <task id="LOCAL-00005" summary="setup: prettier">
+      <created>1657222532699</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657222532699</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,7 +146,9 @@
     <MESSAGE value="add: next structure" />
     <MESSAGE value="add: skeleton" />
     <MESSAGE value="add: basic design and API implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: basic design and API implementation" />
+    <MESSAGE value="setup: ESlinter with Airbnb configs" />
+    <MESSAGE value="setup: prettier" />
+    <option name="LAST_COMMIT_MESSAGE" value="setup: prettier" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
