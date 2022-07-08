@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
-
+import handleOnSubmit from "../pages/index"
 export default function Menu() {
     return(
         <div>
@@ -12,7 +12,6 @@ export default function Menu() {
                 <img src={"../InnoPoisk.svg"} alt = {"InnoPoisk"}/>
                 <div className={styles.right}>
 
-                    <input type="text" placeholder="Search..." className={styles.search}/>
                     <a className={styles.btn} href="/registration"><img src={"../user.png"} alt={""}/></a>
                 </div>
             </header>
