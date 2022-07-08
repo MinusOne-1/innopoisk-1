@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css";
 import Movie from "./movie";
 /* import Menu from "./menu"; */
 
-import { API_KEY, API_URL_SEARCH, API_URL_POPULAR } from "./dataAPI";
+import { API_KEY, API_URL_SEARCH, API_URL_POPULAR } from "../API/dataAPI";
 
 type MovieType = {
   nameRu: string;
