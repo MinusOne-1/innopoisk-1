@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fec91a7a-2410-477f-acd1-05e38d1ed1ab" name="Changes" comment="fix: build errors connected to husky">
+    <list default="true" id="fec91a7a-2410-477f-acd1-05e38d1ed1ab" name="Changes" comment="fix: code formatting, ESlint rules">
       <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/dataAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dataAPI.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/favourites.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/favourites.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/movie.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movie.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/registration.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/settings.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657283998738</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix: code formatting, ESlint rules">
+      <created>1657286044264</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657286044264</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +160,7 @@
     <MESSAGE value="add: basic design and API implementation" />
     <MESSAGE value="add: 2 modules for sign in and sign up" />
     <MESSAGE value="fix: build errors connected to husky" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: build errors connected to husky" />
+    <MESSAGE value="fix: code formatting, ESlint rules" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: code formatting, ESlint rules" />
   </component>
 </project>
