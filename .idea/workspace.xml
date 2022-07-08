@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fec91a7a-2410-477f-acd1-05e38d1ed1ab" name="Changes" comment="fix: code formatting, ESlint rules">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+    <list default="true" id="fec91a7a-2410-477f-acd1-05e38d1ed1ab" name="Changes" comment="fix: code formatting.&#10;in setting file: &lt;label&gt; should be a parent for the checkbox to be connected with it. Other way it will trigger linter.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/movie.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movie.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/registration.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/settings.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signup.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657286044264</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix: code formatting.&#10;in setting file: &lt;label&gt; should be a parent for the checkbox to be connected with it. Other way it will trigger linter.">
+      <created>1657289957444</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657289957444</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +164,7 @@
     <MESSAGE value="add: 2 modules for sign in and sign up" />
     <MESSAGE value="fix: build errors connected to husky" />
     <MESSAGE value="fix: code formatting, ESlint rules" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: code formatting, ESlint rules" />
+    <MESSAGE value="fix: code formatting.&#10;in setting file: &lt;label&gt; should be a parent for the checkbox to be connected with it. Other way it will trigger linter." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: code formatting.&#10;in setting file: &lt;label&gt; should be a parent for the checkbox to be connected with it. Other way it will trigger linter." />
   </component>
 </project>
