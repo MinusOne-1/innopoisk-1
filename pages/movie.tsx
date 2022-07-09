@@ -16,7 +16,7 @@ export default function Movie({
       <div className={styles.movie_info}>
         <h3>{nameRu}</h3>
         <div className={styles.meta}>
-          <img src="../heart.png" alt="heart" />
+          <img src="../heart_nofill.png" alt="heart" />
           <span>{rating}</span>
         </div>
       </div>
