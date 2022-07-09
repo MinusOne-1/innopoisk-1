@@ -89,9 +89,8 @@ const Home: NextPage = () => {
         </ul>
         <img src="../InnoPoisk.svg" alt="InnoPoisk" />
         <div className={styles.right}>
-          {/* <input type="text" placeholder="Search..." className={styles.search}/> */}
 
-          <form onSubmit={handleOnSubmit}>
+          <form className={styles.search} onSubmit={handleOnSubmit}>
             <input
               type="text"
               placeholder="Search..."
@@ -104,11 +103,14 @@ const Home: NextPage = () => {
           </Link>
         </div>
       </header>
+
+      <div className = {styles.body}>
       <div className={styles.movie_container}>
         {movies.length > 0 &&
           movies.map((movie) => <Movie key={movie.filmId} {...movie} />)}
       </div>
-      <div className={styles.container}>
+
+      <div className={styles.containerNavigation}>
         <button type="button" onClick={handleButtonCLickBack}>
           back
         </button>
@@ -116,6 +118,7 @@ const Home: NextPage = () => {
         <button type="button" onClick={handleButtonCLickNext}>
           next
         </button>
+      </div>
       </div>
     </div>
   );

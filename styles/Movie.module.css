@@ -21,35 +21,21 @@
     margin: 0;
 }
 
-.movie_over{
-    background: rgba(255,255,255,0.9);
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    box-shadow: 0 3px 5px rgba(0,0,0, 0.1);
-    position: absolute;
-    padding: 1rem;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: auto;
-    max-height: 100%;
-    transform: translateY(102%);
-    transition: 0.5s ease-in-out;
-}
-
-.movie:active .movie_over{
-
-    max-height: 100%;
-    transform: translateY(-0%);
-}
-
 .movie_info img{
     height: 25px;
-    width: 25px;
+    min-width: 25px;
     margin-right: 0.5rem;
 }
 .meta{
-    position: relative;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+}
+.meta p {
+    text-align: center;
+}
+.meta button {
+    border: none;
+    background: none;
 }
