@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fec91a7a-2410-477f-acd1-05e38d1ed1ab" name="Changes" comment="add: 2 modules for sign in and sign up">
+    <list default="true" id="fec91a7a-2410-477f-acd1-05e38d1ed1ab" name="Changes" comment="fix: code formatting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/dataAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/API/dataAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +57,8 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lanna\Desktop\innopoisk\API" />
+      <recent name="C:\Users\Lanna\Desktop\innopoisk" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/pages" />
     </key>
@@ -118,7 +121,35 @@
       <option name="project" value="LOCAL" />
       <updated>1657215230365</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix: build errors connected to husky">
+      <created>1657283998738</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657283998738</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix: code formatting, ESlint rules">
+      <created>1657286044264</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657286044264</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix: code formatting.&#10;in setting file: &lt;label&gt; should be a parent for the checkbox to be connected with it. Other way it will trigger linter.">
+      <created>1657289957444</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657289957444</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix: code formatting">
+      <created>1657290179741</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657290179741</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +171,10 @@
     <MESSAGE value="add: skeleton" />
     <MESSAGE value="add: basic design and API implementation" />
     <MESSAGE value="add: 2 modules for sign in and sign up" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: 2 modules for sign in and sign up" />
+    <MESSAGE value="fix: build errors connected to husky" />
+    <MESSAGE value="fix: code formatting, ESlint rules" />
+    <MESSAGE value="fix: code formatting.&#10;in setting file: &lt;label&gt; should be a parent for the checkbox to be connected with it. Other way it will trigger linter." />
+    <MESSAGE value="fix: code formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: code formatting" />
   </component>
 </project>
