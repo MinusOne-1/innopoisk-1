@@ -10,6 +10,7 @@
     "prepare": "npx husky install"
   },
   "dependencies": {
+    "firebase": "^9.9.0",
     "next": "12.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -32,6 +33,7 @@
   "lint-staged": {
     "**/*.(js, jsx, ts, tsx)": [
       "prettier --write",
-      "eslint --cache --fix"]
+      "eslint --cache --fix"
+    ]
   }
 }
