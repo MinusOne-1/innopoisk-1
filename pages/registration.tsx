@@ -1,12 +1,12 @@
-import React from "react";
-import styles from "../styles/Registration.module.css";
+import React, { useState } from "react";
 import Head from 'next/head'
-import { useState } from 'react';
-import { app } from '../firebaseConfig'
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import { useRouter } from 'next/router';
 import Link from 'next/link'
+import { app } from '../firebaseConfig'
+import styles from "../styles/Registration.module.css";
 import handlerror from '../src/utils/handleFirebaseError'
+
 export default function Signup() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -39,16 +39,16 @@ export default function Signup() {
 
                     onChange={(event) => setEmail(event.target.value)}
                     value={email}
-                    type={"email"}
-                    alt={"email"}
+                    type="email"
+                    alt="email"
 
                 />
                 <p className={styles.meta}>Password</p>
                 <input
                     onChange={(event) => setPassword(event.target.value)}
                     value={password}
-                    type={"password"}
-                    alt={"password"}
+                    type="password"
+                    alt="password"
                 />
                 <button
                     onClick={signUpUser}
