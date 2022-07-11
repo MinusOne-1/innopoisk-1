@@ -17,8 +17,11 @@ export default function Menu() {
         </ul>
         <img src="../InnoPoisk.svg" alt="InnoPoisk" />
         <div className={styles.right}>
-          <Link className={styles.btn} href="/registration">
-            <img src="../user.png" alt="" />
+          {/*<Link className={styles.btn} href="/registration">*/}
+          {/*  <img src="../user.png" alt="" />*/}
+          {/*</Link>*/}
+          <Link href="/registration">
+            <button className={styles.loginbtn}>Sign in</button>
           </Link>
         </div>
       </header>

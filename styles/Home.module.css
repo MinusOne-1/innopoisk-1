@@ -99,3 +99,12 @@ ul.hr li:hover {
     flex-direction: column;
     align-items: center;
 }
+
+.loginbtn {
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+    background: none;
+    border-radius: 8px;
+    color:white;
+    border: #fff solid 1px;
+}

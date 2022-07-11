@@ -1,21 +1,20 @@
-import React, {useEffect, useState} from "react";
-import {useRouter} from "next/router";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Menu from "../menu";
-import {API_INFO_BBY_ID, API_KEY} from "../../API/dataAPI";
+
+import { API_INFO_BBY_ID, API_KEY } from "../../API/dataAPI";
 import Info from "./Info";
 
-
-type Info = {
-    description: string;
-    slogan: string;
-}
+// type Info = {
+//     description: string;
+//     slogan: string;
+// }
 
 export default function ContactId() {
     const router = useRouter();
-    const {filmId} = router.query;
-    console.log(filmId)
+    const { filmId } = router.query;
+    console.log(filmId);
     const API = API_INFO_BBY_ID + filmId;
-
     const [film, setInfo] = useState<Info>();
 
     useEffect(() => {
@@ -25,24 +24,28 @@ export default function ContactId() {
                 "X-API-KEY": API_KEY,
             },
         })
-            .then(res => res.json())
+            .then((res) => res.json())
             .then((data) => {
-                if (data == ""){
+                if (data == "") {
                     return;
                 }
                 setInfo(data);
                 // console.log(data);
-            }).catch(e => {
-        });
-
-
+            })
+            .catch((e) => {});
     }, []);
 
-    return (<div>
-            <p>At ID number: {filmId}</p>
-            <div> <Info {...film} /></div>
+    return (
+        <div>
+            <div>
+                <Menu />
 
 
+            </div>
+            <div>
+                {" "}
+                <Info {...film} />
+            </div>
         </div>
     );
 }
