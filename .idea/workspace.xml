@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fec91a7a-2410-477f-acd1-05e38d1ed1ab" name="Changes" comment="add: favourites layout">
+    <list default="true" id="fec91a7a-2410-477f-acd1-05e38d1ed1ab" name="Changes" comment="add: add unrendered files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/favComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/favComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/menu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/movie.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movie.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Home.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Movie.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Movie.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Navigatiom.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/movies/Info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies/Info.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/movies/[filmId].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies/[filmId].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/registration.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signin.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,13 +22,14 @@
       <list>
         <option value="CSS File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="API's_testing" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,10 +64,11 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pages/movies" />
+      <recent name="$PROJECT_DIR$/pages" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="C:\Users\Lanna\Desktop\innopoisk\API" />
       <recent name="C:\Users\Lanna\Desktop\innopoisk" />
-      <recent name="$PROJECT_DIR$/pages" />
     </key>
   </component>
   <component name="RunManager">
@@ -95,6 +100,7 @@
       <workItem from="1657117451160" duration="616000" />
       <workItem from="1657181610213" duration="2813000" />
       <workItem from="1657214708781" duration="15657000" />
+      <workItem from="1657442939156" duration="3063000" />
     </task>
     <task id="LOCAL-00001" summary="add: next structure">
       <created>1656603875561</created>
@@ -159,7 +165,28 @@
       <option name="project" value="LOCAL" />
       <updated>1657379734016</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="refactor: menu layout and navigation by pages styles">
+      <created>1657383040607</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1657383040607</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add: UI for movie page">
+      <created>1657534433228</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1657534433228</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add: add unrendered files">
+      <created>1657537130568</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1657537130568</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +213,9 @@
     <MESSAGE value="fix: code formatting.&#10;in setting file: &lt;label&gt; should be a parent for the checkbox to be connected with it. Other way it will trigger linter." />
     <MESSAGE value="fix: code formatting" />
     <MESSAGE value="add: favourites layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: favourites layout" />
+    <MESSAGE value="refactor: menu layout and navigation by pages styles" />
+    <MESSAGE value="add: UI for movie page" />
+    <MESSAGE value="add: add unrendered files" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: add unrendered files" />
   </component>
 </project>

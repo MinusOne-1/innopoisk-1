@@ -127,8 +127,14 @@ const Home: NextPage = () => {
               onChange={handleOnChange}
             />
           </form>
-          <Link className={styles.btn} href="/registration">
-            <img src="../user.png" alt="" />
+          {/* <Link className={styles.btn} href="/registration"> */}
+          {/* <img src="../user.png" alt="" /> */}
+          {/* </Link> */}
+          <Link href="/registration">
+            <button type="button" className={styles.loginbtn}>Sign in</button>
+          </Link>
+          <Link href="">
+            <button type="button" className={styles.loginbtn}>Log out</button>
           </Link>
         </div>
       </header>
