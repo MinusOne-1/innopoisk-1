@@ -3,7 +3,16 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
-import Movie from "./movie";
+import Movie from "../src/components/movie";
+import { app, database } from '../firebaseConfig'
+import {
+  collection,
+  addDoc,
+  getDoc,
+  doc
+} from 'firebase/firestore'
+import { useRouter } from "next/router";
+import Read from "../src/components/read"
 /* import Menu from "./menu"; */
 
 import { API_KEY, API_URL_SEARCH, API_URL_POPULAR } from "../API/dataAPI";
@@ -17,6 +26,25 @@ type MovieType = {
 
 // eslint-disable-next-line react/function-component-definition
 const Home: NextPage = () => {
+
+  useEffect(() => {
+    readData();
+  }, [])
+  const [yes,setyes]=useState(false);
+  const [favMovies,setfavMovies]=useState({a:true});
+    const db = collection(database,'Favorites');
+     function readData(){
+            const userDoc = doc(db, localStorage.getItem('ID')||"S");    
+             getDoc(userDoc).then((docc) => {
+                if (docc.exists()) {
+                     console.log(favMovies);
+                     setfavMovies(docc.data());
+                }
+            })
+    }
+    async function read(){
+        console.log(yes);
+    }
   const [count, setNext] = useState(1);
 
   function handleButtonCLickNext() {
@@ -24,7 +52,8 @@ const Home: NextPage = () => {
   }
 
   function handleButtonCLickBack() {
-    setNext((previousState) => previousState - 1);
+    setNext((previousState) => Math.max(previousState - 1, 1));
+
   }
 
   function updateAPI() {
@@ -109,22 +138,22 @@ const Home: NextPage = () => {
           </Link>
         </div>
       </header>
-
-      <div className = {styles.body}>
-      <div className={styles.movie_container}>
-        {movies.length > 0 &&
-          movies.map((movie) => <Movie key={movie.filmId} {...movie} />)}
-      </div>
-
-      <div className={styles.containerNavigation}>
-        <button type="button" onClick={handleButtonCLickBack}>
-          back
-        </button>
-        <p>{count}</p>
-        <button type="button" onClick={handleButtonCLickNext}>
-          next
-        </button>
-      </div>
+      <div className={styles.body}>
+        <div className={styles.movie_container}>
+          {movies.length > 0 &&
+            movies.map((movie) => <Movie setfavMovies={setfavMovies} key={movie.filmId}
+            {...movie} fav={(movie.nameRu in favMovies&& favMovies[movie.nameRu])} />)}
+        </div>
+            <button onClick={()=>setyes(true)}></button>
+        <div className={styles.containerNavigation}>
+          <button type="button" onClick={handleButtonCLickBack}>
+            back
+          </button>
+          <p>{count}</p>
+          <button type="button" onClick={handleButtonCLickNext}>
+            next
+          </button>
+        </div>
       </div>
     </div>
   );

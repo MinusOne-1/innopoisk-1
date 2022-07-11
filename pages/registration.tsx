@@ -19,8 +19,7 @@ export default function Signup() {
         createUserWithEmailAndPassword(auth, email, password)
             .then((response) => {
                 if (response.user)
-                    if (response.user.accessToken)
-                        sessionStorage.setItem('Token', response.user.accessToken);
+                    localStorage.setItem('ID',response.user.uid);
                 console.log(response.user);
                 router.push('/');
             }
