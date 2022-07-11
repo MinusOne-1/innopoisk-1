@@ -1,30 +1,31 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import { useRouter } from 'next/router';
 import Link from 'next/link'
 import { app } from '../firebaseConfig'
 import styles from "../styles/Registration.module.css";
 import handlerror from '../src/utils/handleFirebaseError'
-
+import {IsSignedInContext} from './_app'
 export default function Signup() {
+    const {isSignedIn, setIsSignedIn}=useContext(IsSignedInContext)!
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
     const auth = getAuth(app);
     const signUpUser = () => {
-      if(password.length<6){
-        alert('Password should be at least 6 characters');
-        return;
-      }
+        if (password.length < 6) {
+            alert('Password should be at least 6 characters');
+            return;
+        }
         createUserWithEmailAndPassword(auth, email, password)
             .then((response) => {
                 if (response.user)
-                    localStorage.setItem('ID',response.user.uid);
+                setIsSignedIn(response.user.uid);
                 console.log(response.user);
                 router.push('/');
             }
             ).catch(err => {
-              
+
                 alert(handlerror(err.message));
             })
     }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
@@ -14,7 +14,7 @@ import {
 import { useRouter } from "next/router";
 import Read from "../src/components/read"
 /* import Menu from "./menu"; */
-
+import {IsSignedInContext} from './_app'
 import { API_KEY, API_URL_SEARCH, API_URL_POPULAR } from "../API/dataAPI";
 
 type MovieType = {
@@ -23,18 +23,20 @@ type MovieType = {
   rating: string;
   filmId: number;
 };
-
 // eslint-disable-next-line react/function-component-definition
 const Home: NextPage = () => {
-
+  const router = useRouter();
   useEffect(() => {
     readData();
   }, [])
-  const [yes,setyes]=useState(false);
-  const [favMovies,setfavMovies]=useState({a:true});
+  const [yes,setyes]=useState<boolean>(false);
+  const {isSignedIn, setIsSignedIn}=useContext(IsSignedInContext)!
+  const [favMovies,setfavMovies]=useState<any>();
     const db = collection(database,'Favorites');
      function readData(){
-            const userDoc = doc(db, localStorage.getItem('ID')||"S");    
+            if(!isSignedIn)return;
+            console.log("THIS IS IT", isSignedIn)
+            const userDoc = doc(db, isSignedIn);    
              getDoc(userDoc).then((docc) => {
                 if (docc.exists()) {
                      console.log(favMovies);
@@ -110,7 +112,8 @@ const Home: NextPage = () => {
       <header className={styles.head}>
         <ul className={styles.hr}>
           <li>
-            <Link href="/">Home</Link>
+            {/* <button onClick={() => {router.push('/')}}></button> */}
+            <Link href="/testing">Home</Link>
           </li>
           <li>
             <Link href="/favourites">Favorites</Link>
@@ -130,19 +133,27 @@ const Home: NextPage = () => {
           {/* <Link className={styles.btn} href="/registration"> */}
           {/* <img src="../user.png" alt="" /> */}
           {/* </Link> */}
-          <Link href="/registration">
+          {isSignedIn&&<Link href="/settings">
+            <button type="button" className={styles.loginbtn}>Settings</button>
+          </Link>}
+          {!isSignedIn&&<Link href="/signin">
             <button type="button" className={styles.loginbtn}>Sign in</button>
-          </Link>
-          <Link href="">
-            <button type="button" className={styles.loginbtn}>Log out</button>
-          </Link>
+          </Link>}
+          {isSignedIn&&<Link href="">
+            <button
+            onClick={(e)=>{
+              setIsSignedIn("");
+              setfavMovies({});
+              }}
+            type="button" className={styles.loginbtn}>Log out</button>
+          </Link>}
         </div>
       </header>
       <div className={styles.body}>
         <div className={styles.movie_container}>
           {movies.length > 0 &&
             movies.map((movie) => <Movie setfavMovies={setfavMovies} key={movie.filmId}
-            {...movie} fav={(movie.nameRu in favMovies&& favMovies[movie.nameRu])} />)}
+            {...movie} fav={(favMovies &&movie.nameRu in favMovies&& favMovies[movie.nameRu])} />)}
         </div>
             <button onClick={()=>setyes(true)}></button>
         <div className={styles.containerNavigation}>

@@ -1,9 +1,10 @@
-import React from "react";
+import React,{useContext} from "react";
 import Link from "next/link";
-import styles from "../styles/menu.module.css";
+import styles from "../../styles/menu.module.css";
 /* import handleOnSubmit from "../pages/index"; */
-
+import {IsSignedInContext} from '../../pages/_app'
 export default function Menu() {
+  const {isSignedIn, setIsSignedIn}=useContext(IsSignedInContext)!
   return (
     <div>
       <header className={styles.head}>
@@ -20,12 +21,19 @@ export default function Menu() {
           {/* <Link className={styles.btn} href="/registration"> */}
           {/*  <img src="../user.png" alt="" /> */}
           {/* </Link> */}
-          <Link href="/registration">
+          {isSignedIn&&<Link href="/settings">
+            <button type="button" className={styles.loginbtn}>Settings</button>
+          </Link>}
+          {!isSignedIn&&<Link href="/signin">
             <button type="button" className={styles.loginbtn}>Sign in</button>
-          </Link>
-          <Link href="">
-            <button type="button" className={styles.loginbtn}>Log out</button>
-          </Link>
+          </Link>}
+          {isSignedIn&&<Link href="/">
+            <button type="button" 
+            onClick={(e)=>{
+            setIsSignedIn("");
+            }}
+            className={styles.loginbtn}>Log out</button>
+          </Link>}
         </div>
       </header>
     </div>

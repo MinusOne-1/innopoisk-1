@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import styles from "../../styles/Movie.module.css";
 import { doc, setDoc } from "firebase/firestore";
 import { app, database } from '../../firebaseConfig'
@@ -6,6 +6,8 @@ import {
   collection,
   addDoc
 } from 'firebase/firestore'
+
+import {IsSignedInContext} from '../../pages/_app'
 export default function Movie({
   setfavMovies,
   nameRu,
@@ -19,8 +21,8 @@ export default function Movie({
   posterUrl: string;
   rating: string;
 }) {
+  const {isSignedIn, setIsSignedIn}=useContext(IsSignedInContext)!
   const db = collection(database, 'Favorites')
-  const [userid]=useState(localStorage.getItem('ID')||"s");
   return (
     <div className={styles.movie}>
       {<img src={posterUrl} alt={nameRu} />}
@@ -29,7 +31,7 @@ export default function Movie({
         <div className={styles.meta}>
           {!fav && <button
             onClick={(event) => {
-              if(userid!="s")setfavMovies(pre => {
+              if(isSignedIn)setfavMovies((pre :any)=> {
                 let pre2 = Object.assign({}, pre);
                 pre2[nameRu]=true;
                 return pre2;
@@ -38,19 +40,19 @@ export default function Movie({
                 alert('Sign in please');
                 return;
               }
-              setDoc(doc(db, userid), {
+              setDoc(doc(db, isSignedIn), {
                 [nameRu]:true
              },{merge :true});
             }}
           ><img src="../heart_nofill.png" alt="heart" /></button>}
           {fav && <button
             onClick={(event) => {
-              setfavMovies(pre => {
+              setfavMovies((pre:any) => {
                 let pre2 = Object.assign({}, pre);
                 pre2[nameRu]=false;
                 return pre2;
               });
-              setDoc(doc(db, userid), {
+              setDoc(doc(db, isSignedIn), {
                 [nameRu]:false
               },{merge :true});
             }}

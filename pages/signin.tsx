@@ -1,13 +1,14 @@
-import React, {useState} from "react";
+import React, {useState,useContext} from "react";
 import { getAuth,signInWithEmailAndPassword } from 'firebase/auth'
 import { useRouter } from 'next/router';
 import Link from 'next/link'
 import styles from "../styles/Registration.module.css";
 import handlerror from '../src/utils/handleFirebaseError'
 import { app } from '../firebaseConfig'
-
+import {IsSignedInContext} from './_app'
 
 export default function Signup() {
+    const {isSignedIn, setIsSignedIn}=useContext(IsSignedInContext)!
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const router = useRouter();
@@ -17,8 +18,7 @@ export default function Signup() {
         .then((response)=>
         {
             if(response.user)
-            localStorage.setItem('ID',response.user.uid);
-            console.log (auth.currentUser);
+            setIsSignedIn(response.user.uid);
           router.push('/');
         }        
         ).catch(err=>{

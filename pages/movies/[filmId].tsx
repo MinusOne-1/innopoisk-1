@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Menu from "../menu";
+import Menu from "../../src/components/menu";
 
 import { API_INFO_BBY_ID, API_KEY } from "../../API/dataAPI";
 import Info from "./Info";

@@ -1,5 +1,5 @@
-import Menu from "./menu";
-import React, { useEffect, useState } from "react";
+import Menu from "../src/components/menu";
+import React, { useEffect, useState, useContext } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
@@ -13,18 +13,20 @@ import {
   getDoc,
   doc
 } from 'firebase/firestore'
-import { setFlagsFromString } from "v8";
+import { IsSignedInContext } from './_app'
 export default function Favourites() {
-const auth =getAuth(app);
+  const { isSignedIn, setIsSignedIn } = useContext(IsSignedInContext)!
+  const auth = getAuth(app);
   useEffect(() => {
-    console.log (auth.currentUser);
+    console.log(auth.currentUser);
     readData();
     result;
   }, [])
-  const [favMovies, setfavMovies] = useState([]);
+  const [favMovies, setfavMovies] = useState<Array<Array<any>>>([]);
   const db = collection(database, 'Favorites');
   function readData() {
-    const userDoc = doc(db, localStorage.getItem('ID') || "S");
+    if (!isSignedIn) return;
+    const userDoc = doc(db, isSignedIn);
     getDoc(userDoc).then((docc) => {
       if (docc.exists()) {
         setfavMovies(Object.entries(docc.data()));
@@ -32,12 +34,11 @@ const auth =getAuth(app);
       else console.log("ksm");
     })
   }
-  function result()
-  {
-    const movies=favMovies.filter(movie=>movie[1]);
+  function result() {
+    const movies = favMovies.filter(movie => movie[1]);
     console.log(movies);
-    return movies.map((movie)=>
-    <FavComponent nameRu={movie[0]} isfav={movie[1]} setfavMovies={setfavMovies} />
+    return movies.map((movie) =>
+      <FavComponent nameRu={movie[0]} isfav={movie[1]} setfavMovies={setfavMovies} />
     )
   }
   return (
