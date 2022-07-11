@@ -26,13 +26,13 @@ export default function ContactId() {
         })
             .then((res) => res.json())
             .then((data) => {
-                if (data == "") {
+                if (data === "") {
                     return;
                 }
                 setInfo(data);
                 // console.log(data);
             })
-            .catch((e) => {});
+            .catch(() => {});
     }, []);
 
     return (

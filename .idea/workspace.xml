@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fec91a7a-2410-477f-acd1-05e38d1ed1ab" name="Changes" comment="add: UI for movie page">
+    <list default="true" id="fec91a7a-2410-477f-acd1-05e38d1ed1ab" name="Changes" comment="add: add unrendered files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/favComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/favComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/menu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/movie.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movie.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/movies/Info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies/Info.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/movies/[filmId].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies/[filmId].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/movieInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/movieInfo.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/registration.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/signin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signin.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657534433228</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add: add unrendered files">
+      <created>1657537130568</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1657537130568</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +215,7 @@
     <MESSAGE value="add: favourites layout" />
     <MESSAGE value="refactor: menu layout and navigation by pages styles" />
     <MESSAGE value="add: UI for movie page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: UI for movie page" />
+    <MESSAGE value="add: add unrendered files" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: add unrendered files" />
   </component>
 </project>

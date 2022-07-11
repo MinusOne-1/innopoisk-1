@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../styles/Movie.module.css";
 import Link from "next/link";
+import styles from "../styles/Movie.module.css";
 
 export default function Movie({
   nameRu,
@@ -13,15 +13,18 @@ export default function Movie({
   posterUrl: string;
   rating: string;
 }) {
+    function concatenation():string {
+        return `/movies/${ filmId}`;
+    }
   return (
     <div className={styles.movie}>
 
       <img src={posterUrl} alt={nameRu} />
       <div className={styles.movie_info}>
           {/* eslint-disable-next-line no-template-curly-in-string */}
-       <Link href={"/movies/"+filmId} key = {filmId}><h3>{nameRu}</h3></Link>
+       <Link href={concatenation()} key = {filmId}><h3>{nameRu}</h3></Link>
         <div className={styles.meta}>
-          <button><img src="../heart_nofill.png" alt="heart" /></button>
+          <button type="button"><img src="../heart_nofill.png" alt="heart" /></button>
           <span>{rating}</span>
         </div>
       </div>

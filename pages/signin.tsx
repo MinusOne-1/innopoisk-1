@@ -1,12 +1,12 @@
-import React from "react";
-import styles from "../styles/Registration.module.css";
-import Head from 'next/head'
-import { useState } from 'react';
-import { app } from '../firebaseConfig'
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
+import React, {useState} from "react";
+import { getAuth,signInWithEmailAndPassword } from 'firebase/auth'
 import { useRouter } from 'next/router';
 import Link from 'next/link'
+import styles from "../styles/Registration.module.css";
 import handlerror from '../src/utils/handleFirebaseError'
+import { app } from '../firebaseConfig'
+
+
 export default function Signup() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -35,21 +35,21 @@ export default function Signup() {
 
                     onChange={(event) => setEmail(event.target.value)}
                     value={email}
-                    type={"email"}
-                    alt={"email"}
-
+                    type="email"
+                    alt="email"
                 />
                 <p className={styles.meta}>Password</p>
                 <input
                     onChange={(event) => setPassword(event.target.value)}
                     value={password}
-                    type={"password"}
-                    alt={"password"}
+                    type="password"
+                    alt="password"
                 />
                 <button
                 onClick={signUpUser}
                 >
                     Sign In</button>
+                {/* eslint-disable-next-line react/no-unescaped-entities */}
                 <p className={styles.question}>Don't have an account?</p>
                 <Link href="/registration">
                     <a>Sign up</a>

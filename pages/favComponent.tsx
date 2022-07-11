@@ -5,7 +5,7 @@ export default function FavComponent(){
     return (
         <div className={styles.main}>
             <p>Name of the film</p>
-            <button className={styles.btn}><img src="../heart.png" alt="heart" /></button>
+            <button type="button" className={styles.btn}><img src="../heart.png" alt="heart" /></button>
         </div>
     );
 }

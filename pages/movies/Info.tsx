@@ -19,11 +19,14 @@ export default function Info({
 
 }) {
 
+    // eslint-disable-next-line no-param-reassign
     if (ratingAgeLimits == null) ratingAgeLimits = "-";
-    if (year == null) year = "-";
+    // eslint-disable-next-line no-param-reassign
+    if (year == null) year = Number("-");
+    // eslint-disable-next-line no-param-reassign
     if (description == null) description = "-";
 
-    return (<>
+    return (
             <div className={styles.container}>
                 <img src={posterUrl} alt={nameRu} />
                 <div className={styles.info}>
@@ -50,6 +53,5 @@ export default function Info({
                     </div>
                 </div>
             </div>
-        </>
     );
 }

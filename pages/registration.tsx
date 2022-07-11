@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Head from 'next/head'
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 import { useRouter } from 'next/router';
 import Link from 'next/link'
@@ -50,13 +49,12 @@ export default function Signup() {
                     type="password"
                     alt="password"
                 />
-                <button
-                    onClick={signUpUser}
-                >
+                <button type="button"
+                    onClick={signUpUser}>
                     Sign up</button>
                 <p className={styles.question}>Already have account?</p>
                 <Link href="/signin">
-                    <a>Sign in</a>
+                    Sign in
                 </Link>
             </div>
         </div>
