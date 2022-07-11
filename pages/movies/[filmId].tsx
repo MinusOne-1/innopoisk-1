@@ -1,14 +1,48 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {useRouter} from "next/router";
 import Menu from "../menu";
+import {API_INFO_BBY_ID, API_KEY} from "../../API/dataAPI";
+import Info from "./Info";
 
 
-export default function moviePage(){
+type Info = {
+    description: string;
+    slogan: string;
+}
 
-    return(
+export default function ContactId() {
+    const router = useRouter();
+    const {filmId} = router.query;
+    console.log(filmId)
+    const API = API_INFO_BBY_ID + filmId;
 
-           <div>
-               <Menu/>
-           </div>
+    const [film, setInfo] = useState<Info>();
 
+    useEffect(() => {
+        fetch(API, {
+            headers: {
+                "Content-Type": "application/json",
+                "X-API-KEY": API_KEY,
+            },
+        })
+            .then(res => res.json())
+            .then((data) => {
+                if (data == ""){
+                    return;
+                }
+                setInfo(data);
+                // console.log(data);
+            }).catch(e => {
+        });
+
+
+    }, []);
+
+    return (<div>
+            <p>At ID number: {filmId}</p>
+            <div> <Info {...film} /></div>
+
+
+        </div>
     );
 }
