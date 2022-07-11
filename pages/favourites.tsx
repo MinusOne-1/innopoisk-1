@@ -5,6 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 import FavComponent from "../src/components/favComponent";
 import styles from "../styles/favComponent.module.css";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 import { app, database } from '../firebaseConfig'
 import {
   collection,
@@ -14,11 +15,11 @@ import {
 } from 'firebase/firestore'
 import { setFlagsFromString } from "v8";
 export default function Favourites() {
-
+const auth =getAuth(app);
   useEffect(() => {
+    console.log (auth.currentUser);
     readData();
     result;
-    console.log(result);
   }, [])
   const [favMovies, setfavMovies] = useState([]);
   const db = collection(database, 'Favorites');
@@ -26,7 +27,6 @@ export default function Favourites() {
     const userDoc = doc(db, localStorage.getItem('ID') || "S");
     getDoc(userDoc).then((docc) => {
       if (docc.exists()) {
-        // wconsole.log(favMovies);
         setfavMovies(Object.entries(docc.data()));
       }
       else console.log("ksm");

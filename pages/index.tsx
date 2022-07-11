@@ -40,7 +40,6 @@ const Home: NextPage = () => {
                      console.log(favMovies);
                      setfavMovies(docc.data());
                 }
-                else console.log("ksm");
             })
     }
     async function read(){

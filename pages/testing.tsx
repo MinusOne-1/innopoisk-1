@@ -3,6 +3,8 @@ import Head from 'next/head'
 import { useRouter } from 'next/router';
 import Link from 'next/link'
 import Read from "../src/components/read"
+import { getAuth, updatePassword } from "firebase/auth";
+
 import { app, database } from '../firebaseConfig'
 import {
     collection,
@@ -18,19 +20,18 @@ export default function test() {
             const userDoc = doc(db, sessionStorage.getItem('ID')||"S");    
             await getDoc(userDoc).then((docc) => {
                 if (docc.exists()) {
-                     console.log(favMovies);
-                      console.log(docc.data()['a']);
+                    //  console.log(favMovies);
+                    //   console.log(docc.data()['a']);
                      setfavMovies(docc.data());
-                    console.log(favMovies);
+                    // console.log(favMovies);
                 }
             })
     }
     async function read(){
-        console.log(favMovies);
-        console.log(('a' in favMovies));
     }
     useEffect(() => {
-        readData();
+        const auth = getAuth();
+        console.log (auth.currentUser);
       }, [])
     return (
         <div>

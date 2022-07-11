@@ -18,7 +18,7 @@ export default function Signup() {
         {
             if(response.user)
             localStorage.setItem('ID',response.user.uid);
-            console.log(response.user);
+            console.log (auth.currentUser);
           router.push('/');
         }        
         ).catch(err=>{
