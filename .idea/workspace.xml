@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fec91a7a-2410-477f-acd1-05e38d1ed1ab" name="Changes" comment="add: favourites layout">
+    <list default="true" id="fec91a7a-2410-477f-acd1-05e38d1ed1ab" name="Changes" comment="add: cyrpress settings and one test">
+      <change afterPath="$PROJECT_DIR$/cypress.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/component/home.cy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/e2e/home.cy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/fixtures/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/support/commands.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/support/component-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/support/component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cypress/support/e2e.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/movies/Info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies/Info.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/movies/[filmId].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies/[filmId].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/Home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/Home.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +58,7 @@
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Lanna\\Desktop\\innopoisk\\node_modules\\prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/alexandrachupkova/WebstormProjects/innopoisk/node_modules/typescript/lib",
+    "ts.external.directory.path": "C:\\Users\\Lanna\\Desktop\\innopoisk1\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -197,6 +203,7 @@
     <MESSAGE value="fix: code formatting" />
     <MESSAGE value="add: favourites layout" />
     <MESSAGE value="refactor: menu layout and navigation by pages styles" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: menu layout and navigation by pages styles" />
+    <MESSAGE value="add: cyrpress settings and one test" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: cyrpress settings and one test" />
   </component>
 </project>
