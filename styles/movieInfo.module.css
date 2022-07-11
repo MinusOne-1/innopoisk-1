@@ -19,6 +19,9 @@
     margin-right: 40px;
 }
 
-.general li {
+.general a {
+    display: flex;
     margin: 0;
+    text-align: center;
+    align-content: center;
 }

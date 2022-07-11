@@ -104,6 +104,9 @@ const Home: NextPage = () => {
           <Link href="/registration">
             <button className={styles.loginbtn}>Sign in</button>
           </Link>
+          <Link href="">
+            <button className={styles.loginbtn}>Log out</button>
+          </Link>
         </div>
       </header>
 

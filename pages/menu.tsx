@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/menu.module.css";
 /* import handleOnSubmit from "../pages/index"; */
 
 export default function Menu() {
@@ -22,6 +22,9 @@ export default function Menu() {
           {/*</Link>*/}
           <Link href="/registration">
             <button className={styles.loginbtn}>Sign in</button>
+          </Link>
+          <Link href="">
+            <button className={styles.loginbtn}>Log out</button>
           </Link>
         </div>
       </header>
