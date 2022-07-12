@@ -1,19 +1,10 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "airbnb",
-    "prettier"
-  ],
+  "extends": ["next/core-web-vitals", "airbnb", "prettier"],
   "rules": {
     "react/jsx-filename-extension": [
       2,
       {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     ],
     "react/jsx-props-no-spreading": "off",
