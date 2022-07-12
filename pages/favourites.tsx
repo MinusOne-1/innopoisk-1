@@ -1,28 +1,19 @@
-import Menu from "../src/components/menu";
 import React, { useEffect, useState, useContext } from "react";
-import type { NextPage } from "next";
-import Head from "next/head";
-import Link from "next/link";
+import { getAuth } from "firebase/auth";
+import { collection, getDoc, doc } from "firebase/firestore";
+import { app, database } from "../firebaseConfig";
+import { IsSignedInContext } from "./_app";
+import Menu from "../src/components/menu";
 import FavComponent from "../src/components/favComponent";
 import styles from "../styles/favComponent.module.css";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { app, database } from "../firebaseConfig";
-import { collection, addDoc, getDoc, doc } from "firebase/firestore";
-import { IsSignedInContext } from "./_app";
+
 export default function Favourites() {
+  // eslint-disable-next-line no-unused-vars
   const { isSignedIn, setIsSignedIn } = useContext(IsSignedInContext)!;
   const auth = getAuth(app);
-  useEffect(() => {
-    console.log(auth.currentUser);
-    readData();
-    result;
-  }, []);
   const [favMovies, setfavMovies] = useState<Array<Array<any>>>([]);
   const db = collection(database, "Favorites");
+
   function readData() {
     if (!isSignedIn) return;
     const userDoc = doc(db, isSignedIn);
@@ -32,6 +23,7 @@ export default function Favourites() {
       }
     });
   }
+
   function result() {
     const movies = favMovies.filter((movie) => movie[1]);
     console.log(movies);
@@ -43,6 +35,14 @@ export default function Favourites() {
       />
     ));
   }
+
+  useEffect(() => {
+    console.log(auth.currentUser);
+    readData();
+    // eslint-disable-next-line no-unused-expressions
+    result;
+  }, []);
+
   return (
     <>
       <Menu />

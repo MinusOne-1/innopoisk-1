@@ -1,14 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
-import type { NextPage } from "next";
-import Head from "next/head";
+import { collection, getDoc, doc } from "firebase/firestore";
+import { useRouter } from "next/router";
 import Link from "next/link";
+import Head from "next/head";
+import type { NextPage } from "next";
+import { database } from "../firebaseConfig";
 import styles from "../styles/Home.module.css";
 import Movie from "../src/components/movie";
-import { app, database } from "../firebaseConfig";
-import { collection, addDoc, getDoc, doc } from "firebase/firestore";
-import { useRouter } from "next/router";
-import Read from "../src/components/read";
-/* import Menu from "./menu"; */
 import { IsSignedInContext } from "./_app";
 import { API_KEY, API_URL_SEARCH, API_URL_POPULAR } from "../API/dataAPI";
 
@@ -20,14 +18,17 @@ type MovieType = {
 };
 // eslint-disable-next-line react/function-component-definition
 const Home: NextPage = () => {
+  // eslint-disable-next-line no-unused-vars
   const router = useRouter();
   useEffect(() => {
+    // eslint-disable-next-line no-use-before-define
     readData();
   }, []);
-  const [yes, setyes] = useState<boolean>(false);
+  // eslint-disable-next-line no-unused-vars
   const { isSignedIn, setIsSignedIn } = useContext(IsSignedInContext)!;
   const [favMovies, setfavMovies] = useState<any>();
   const db = collection(database, "Favorites");
+
   function readData() {
     if (!isSignedIn) return;
     console.log("THIS IS IT", isSignedIn);
@@ -39,9 +40,7 @@ const Home: NextPage = () => {
       }
     });
   }
-  async function read() {
-    console.log(yes);
-  }
+
   const [count, setNext] = useState(1);
 
   function handleButtonCLickNext() {
@@ -141,11 +140,12 @@ const Home: NextPage = () => {
             </Link>
           )}
           {isSignedIn && (
-            <Link href="">
+            <Link href="/">
               <button
                 onClick={(e) => {
                   setIsSignedIn("");
                   setfavMovies({});
+                  console.log(e);
                 }}
                 type="button"
                 className={styles.loginbtn}

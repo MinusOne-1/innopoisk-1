@@ -1,8 +1,10 @@
-import React, { useMemo, useState, createContext, useEffect } from "react";
+import React, { useMemo, useState, createContext } from "react";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
+
 export const IsSignedInContext = createContext<{
   isSignedIn: string | undefined;
+  // eslint-disable-next-line no-unused-vars
   setIsSignedIn: (isSigndIn: string) => void;
 } | null>(null);
 
@@ -12,9 +14,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   const getSignedIn = () => {
     // return undefined
     if (typeof window === "undefined") return undefined;
-    const _isSignedIn = localStorage.getItem("userId");
-    if (!_isSignedIn) return undefined;
-    return _isSignedIn;
+    const isSignedInId = localStorage.getItem("userId");
+    if (!isSignedInId) return undefined;
+    return isSignedInId;
   };
 
   const isSignedInValue = useMemo(

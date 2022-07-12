@@ -1,11 +1,10 @@
-import React, { useEffect, useState, useContext } from "react";
-import styles from "../../styles/Movie.module.css";
-import { doc, setDoc } from "firebase/firestore";
-import { app, database } from "../../firebaseConfig";
-import { collection, addDoc } from "firebase/firestore";
-
-import { IsSignedInContext } from "../../pages/_app";
+import React, { useContext } from "react";
+import { doc, setDoc, collection } from "firebase/firestore";
 import Link from "next/link";
+import styles from "../../styles/Movie.module.css";
+import { database } from "../../firebaseConfig";
+import { IsSignedInContext } from "../../pages/_app";
+
 export default function Movie({
   setfavMovies,
   filmId,
@@ -21,22 +20,25 @@ export default function Movie({
   posterUrl: string;
   rating: string;
 }) {
+  // eslint-disable-next-line no-unused-vars
   const { isSignedIn, setIsSignedIn } = useContext(IsSignedInContext)!;
   const db = collection(database, "Favorites");
   return (
     <div className={styles.movie}>
-      {<img src={posterUrl} alt={nameRu} />}
+      <img src={posterUrl} alt={nameRu} />
       <div className={styles.movie_info}>
-        <Link href={"/movies/" + filmId} key={filmId}>
+        <Link href={`/movies/${filmId}`} key={filmId}>
           <h3>{nameRu}</h3>
         </Link>
         <div className={styles.meta}>
           {!fav && (
             <button
+              type="button"
               onClick={(event) => {
+                console.log(event);
                 if (isSignedIn)
                   setfavMovies((pre: any) => {
-                    let pre2 = Object.assign({}, pre);
+                    const pre2 = { ...pre };
                     pre2[nameRu] = true;
                     return pre2;
                   });
@@ -58,9 +60,11 @@ export default function Movie({
           )}
           {fav && (
             <button
+              type="button"
               onClick={(event) => {
+                console.log(event);
                 setfavMovies((pre: any) => {
-                  let pre2 = Object.assign({}, pre);
+                  const pre2 = { ...pre };
                   pre2[nameRu] = false;
                   return pre2;
                 });

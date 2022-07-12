@@ -1,13 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useRouter } from "next/router";
 import Menu from "../../src/components/menu";
-
 import { API_INFO_BBY_ID, API_KEY } from "../../API/dataAPI";
 import Info from "./Info";
 import { IsSignedInContext } from "../_app";
-import { userAgent } from "next/server";
-import { app, database } from "../../firebaseConfig";
-import { collection, addDoc, getDoc, setDoc, doc } from "firebase/firestore";
+
 type Information = {
   nameRu: string;
   description: string;
@@ -15,11 +12,12 @@ type Information = {
 };
 
 export default function ContactId() {
+  // eslint-disable-next-line no-unused-vars
   const { isSignedIn, setIsSignedIn } = useContext(IsSignedInContext)!;
-  const db = collection(database, "Favorites");
   const router = useRouter();
 
   const [film, setInfo] = useState<Information>();
+  // eslint-disable-next-line no-unused-vars
   const [fav, setFav] = useState<boolean>(false);
   useEffect(() => {
     const { filmId } = router.query;

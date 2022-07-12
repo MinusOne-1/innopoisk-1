@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
-import styles from "/styles/movieInfo.module.css";
+import { collection, getDoc, setDoc, doc } from "firebase/firestore";
+import styles from "../../styles/movieInfo.module.css";
 import { IsSignedInContext } from "../_app";
-import { app, database } from "../../firebaseConfig";
-import { collection, addDoc, getDoc, setDoc, doc } from "firebase/firestore";
+import { database } from "../../firebaseConfig";
+
 export default function Info({
   nameRu,
   posterUrl,
@@ -20,14 +21,16 @@ export default function Info({
 
   // genres: genre[] = [];
 }) {
+  // eslint-disable-next-line no-unused-vars
   const { isSignedIn, setIsSignedIn } = useContext(IsSignedInContext)!;
   const db = collection(database, "Favorites");
   const [fav, setFav] = useState<boolean>(false);
+
   function readData() {
     if (!isSignedIn) return;
     const userDoc = doc(db, isSignedIn);
     getDoc(userDoc).then((docc) => {
-      if (docc.exists()&&nameRu) {
+      if (docc.exists() && nameRu) {
         if (docc.data()[nameRu]) setFav(true);
       }
     });
@@ -49,47 +52,49 @@ export default function Info({
       <img src={posterUrl} alt={nameRu} />
       <div className={styles.info}>
         <div className={styles.header}>
-        <h1>{nameRu}</h1>
-        {!fav && (
+          <h1>{nameRu}</h1>
+          {!fav && (
             <button
-                onClick={(event) => {
-                  if (isSignedIn) setFav(true);
-                  else {
-                    alert("Sign in please");
-                    return;
-                  }
-                  if(nameRu){
-                    setDoc(
-                        doc(db, isSignedIn),
-                        {
-                          [nameRu]: true,
-                        },
-                        { merge: true },
-                    );
-                  }
-                }}
+              type="button"
+              onClick={() => {
+                if (isSignedIn) setFav(true);
+                else {
+                  alert("Sign in please");
+                  return;
+                }
+                if (nameRu) {
+                  setDoc(
+                    doc(db, isSignedIn),
+                    {
+                      [nameRu]: true,
+                    },
+                    { merge: true },
+                  );
+                }
+              }}
             >
               <img src="../heart_nofill.png" alt="heart" />
             </button>
-        )}
-        {fav && (
+          )}
+          {fav && (
             <button
-                onClick={(event) => {
-                  setFav(false);
-                  if(nameRu){
-                    setDoc(
-                        doc(db, isSignedIn),
-                        {
-                          [nameRu]: false,
-                        },
-                        { merge: true },
-                    );
-                  }
-                }}
+              type="button"
+              onClick={() => {
+                setFav(false);
+                if (nameRu) {
+                  setDoc(
+                    doc(db, isSignedIn),
+                    {
+                      [nameRu]: false,
+                    },
+                    { merge: true },
+                  );
+                }
+              }}
             >
               <img className={styles.heart} src="../heart.png" alt="heart" />
             </button>
-        )}
+          )}
         </div>
         <h2> About movie</h2>
         <div className={styles.general}>
@@ -106,9 +111,8 @@ export default function Info({
             <p>{description}</p>
           </div>
 
-
           <div>
-            {webUrl&&<a href={webUrl.toString()}>Link to KinoPoisk</a>}
+            {webUrl && <a href={webUrl.toString()}>Link to KinoPoisk</a>}
           </div>
         </div>
       </div>

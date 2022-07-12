@@ -8,6 +8,7 @@ import { app } from "../firebaseConfig";
 import { IsSignedInContext } from "./_app";
 
 export default function Signup() {
+  // eslint-disable-next-line no-unused-vars
   const { isSignedIn, setIsSignedIn } = useContext(IsSignedInContext)!;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,11 +42,13 @@ export default function Signup() {
           type="password"
           alt="password"
         />
-        <button onClick={signUpUser}>Sign In</button>
+        <button type="button" onClick={signUpUser}>
+          Sign In
+        </button>
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         <p className={styles.question}>Don't have an account?</p>
         <Link href="/registration">
-          <a>Sign up</a>
+          <p>Sign up</p>
         </Link>
       </div>
     </div>

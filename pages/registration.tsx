@@ -6,7 +6,9 @@ import { app } from "../firebaseConfig";
 import styles from "../styles/Registration.module.css";
 import handlerror from "../src/utils/handleFirebaseError";
 import { IsSignedInContext } from "./_app";
+
 export default function Signup() {
+  // eslint-disable-next-line no-unused-vars
   const { isSignedIn, setIsSignedIn } = useContext(IsSignedInContext)!;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

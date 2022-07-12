@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 import styles from "../../styles/menu.module.css";
-/* import handleOnSubmit from "../pages/index"; */
 import { IsSignedInContext } from "../../pages/_app";
+
 export default function Menu() {
   const { isSignedIn, setIsSignedIn } = useContext(IsSignedInContext)!;
   return (
@@ -39,7 +39,7 @@ export default function Menu() {
             <Link href="/">
               <button
                 type="button"
-                onClick={(e) => {
+                onClick={() => {
                   setIsSignedIn("");
                 }}
                 className={styles.loginbtn}
