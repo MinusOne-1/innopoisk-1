@@ -4,23 +4,29 @@ import styles from "/styles/movieInfo.module.css";
 export default function Info({
                                  nameRu,
                                  posterUrl,
-                                 rating,
+
                                  description,
-    year, webUrl, ratingAgeLimits, slogan,filmLength
+    year, webUrl, ratingAgeLimits,
                              }: {
     nameRu: string;
     posterUrl: string;
-    rating: string;
     description: string;
     year: number;
     webUrl: URL;
     ratingAgeLimits: string;
-    slogan: string;
-    filmLength: number
+
     // genres: genre[] = [];
 
 }) {
-    return (<>
+
+    // eslint-disable-next-line no-param-reassign
+    if (ratingAgeLimits == null) ratingAgeLimits = "-";
+    // eslint-disable-next-line no-param-reassign
+    if (year == null) year = Number("-");
+    // eslint-disable-next-line no-param-reassign
+    if (description == null) description = "-";
+
+    return (
             <div className={styles.container}>
                 <img src={posterUrl} alt={nameRu} />
                 <div className={styles.info}>
@@ -32,7 +38,7 @@ export default function Info({
                             <h4>{year}</h4>
                         </div>
                         <div>
-                            <h3>ratingAgeLimits</h3>
+                            <h3>Age</h3>
                             <h4>{ratingAgeLimits}</h4>
                         </div>
                         <div>
@@ -47,6 +53,5 @@ export default function Info({
                     </div>
                 </div>
             </div>
-        </>
     );
 }
