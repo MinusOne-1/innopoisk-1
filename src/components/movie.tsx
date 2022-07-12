@@ -8,14 +8,17 @@ import {
 } from 'firebase/firestore'
 
 import {IsSignedInContext} from '../../pages/_app'
+import Link from "next/link";
 export default function Movie({
   setfavMovies,
+  filmId,
   nameRu,
   posterUrl,
   rating,
   fav
 }: {
   setfavMovies:Function
+  filmId:number,
   fav: boolean |undefined
   nameRu: string;
   posterUrl: string;
@@ -27,7 +30,7 @@ export default function Movie({
     <div className={styles.movie}>
       {<img src={posterUrl} alt={nameRu} />}
       <div className={styles.movie_info}>
-        <h3>{nameRu}</h3>
+        <Link href={"/movies/" + filmId} key = {filmId}><h3>{nameRu}</h3></Link>
         <div className={styles.meta}>
           {!fav && <button
             onClick={(event) => {

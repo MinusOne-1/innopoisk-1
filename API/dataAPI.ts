@@ -1,4 +1,4 @@
-export const API_KEY = "6fd475c5-1bce-46f7-8a75-f39da6225c65";
+export const API_KEY = "fb8c0861-9519-4d6d-9e50-76b3953a7237";
 export const IMAGE_API =
   "https://kinopoiskapiunofficial.tech/api/v2.2/films/{id}/images?type=POSTER";
 export const API_URL_POPULAR =

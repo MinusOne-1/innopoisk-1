@@ -155,7 +155,7 @@ const Home: NextPage = () => {
             movies.map((movie) => <Movie setfavMovies={setfavMovies} key={movie.filmId}
             {...movie} fav={(favMovies &&movie.nameRu in favMovies&& favMovies[movie.nameRu])} />)}
         </div>
-            <button onClick={()=>setyes(true)}></button>
+            <button  onClick={()=>setyes(true)}></button>
         <div className={styles.containerNavigation}>
           <button type="button" onClick={handleButtonCLickBack}>
             back

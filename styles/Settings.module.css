@@ -31,3 +31,11 @@
     align-content: space-between;
     display: flex;
 }
+.changePassword {
+    background: none;
+    font-size: 16px;
+    border: #000 solid 1px ;
+    border-radius: 10px;
+    margin-left: 15px;
+    padding: 5px 10px 5px 10px;
+}

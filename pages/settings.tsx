@@ -77,7 +77,7 @@ export default function Settings() {
                   value={newPassword}
                   type="password"
                   alt="password" />
-                <button
+                <button type="button" className={styles.changePassword}
                   onClick={changePassword}
                 >
                   Change Password</button>

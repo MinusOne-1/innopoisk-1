@@ -14,6 +14,7 @@ export default function Movie({
   rating: string;
 }) {
     function concatenation():string {
+        console.log("hui");
         return `/movies/${ filmId}`;
     }
   return (
@@ -21,8 +22,7 @@ export default function Movie({
 
       <img src={posterUrl} alt={nameRu} />
       <div className={styles.movie_info}>
-          {/* eslint-disable-next-line no-template-curly-in-string */}
-       <Link href={concatenation()} key = {filmId}><h3>{nameRu}</h3></Link>
+    <Link href={concatenation()} key = {filmId}><h3>{nameRu}</h3></Link>
         <div className={styles.meta}>
           <button type="button"><img src="../heart_nofill.png" alt="heart" /></button>
           <span>{rating}</span>
