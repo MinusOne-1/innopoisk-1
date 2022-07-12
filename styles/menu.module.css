@@ -1,3 +1,12 @@
+.loginbtn {
+  font-size: 20px;
+  padding: 5px 10px 5px 10px;
+  background: none;
+  border-radius: 8px;
+  color: white;
+  border: #fff solid 1px;
+  margin-right: 10px;
+}
 .head {
   height: 60px;
   font-size: 20px;
@@ -28,7 +37,6 @@ ul.hr li {
 ul.hr li:hover {
   text-decoration: underline;
 }
-
 .search input {
   padding: 10px;
   position: relative;
@@ -38,13 +46,6 @@ ul.hr li:hover {
   border-radius: 15px;
   max-height: 40px;
   height: 40px;
-}
-
-.movie_container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
 }
 
 .btn {
@@ -66,39 +67,4 @@ ul.hr li:hover {
 
 .right img {
   width: 55px;
-}
-
-.containerNavigation {
-  position: relative;
-  align-items: center;
-  display: flex;
-}
-
-.containerNavigation button {
-  margin: 10px;
-  border-radius: 5px;
-  max-height: 50px;
-  font-size: 18px;
-  padding: 0 10px 0 10px;
-  border: black solid 1px;
-  background: none;
-}
-.containerNavigation p {
-  font-size: 20px;
-}
-
-.body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.loginbtn {
-  font-size: 20px;
-  padding: 5px 10px 5px 10px;
-  background: none;
-  border-radius: 8px;
-  color: white;
-  border: #fff solid 1px;
-  margin-right: 5px;
 }

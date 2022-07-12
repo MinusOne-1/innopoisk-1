@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
-import type { NextPage } from "next";
-import Head from "next/head";
+import React, { useEffect, useState, useContext } from "react";
+import { collection, getDoc, doc } from "firebase/firestore";
+import { useRouter } from "next/router";
 import Link from "next/link";
+import Head from "next/head";
+import type { NextPage } from "next";
+import { database } from "../firebaseConfig";
 import styles from "../styles/Home.module.css";
-import Movie from "./movie";
-/* import Menu from "./menu"; */
-
+import Movie from "../src/components/movie";
+import { IsSignedInContext } from "./_app";
 import { API_KEY, API_URL_SEARCH, API_URL_POPULAR } from "../API/dataAPI";
 
 type MovieType = {
@@ -14,9 +16,31 @@ type MovieType = {
   rating: string;
   filmId: number;
 };
-
 // eslint-disable-next-line react/function-component-definition
 const Home: NextPage = () => {
+  // eslint-disable-next-line no-unused-vars
+  const router = useRouter();
+  useEffect(() => {
+    // eslint-disable-next-line no-use-before-define
+    readData();
+  }, []);
+  // eslint-disable-next-line no-unused-vars
+  const { isSignedIn, setIsSignedIn } = useContext(IsSignedInContext)!;
+  const [favMovies, setfavMovies] = useState<any>();
+  const db = collection(database, "Favorites");
+
+  function readData() {
+    if (!isSignedIn) return;
+    console.log("THIS IS IT", isSignedIn);
+    const userDoc = doc(db, isSignedIn);
+    getDoc(userDoc).then((docc) => {
+      if (docc.exists()) {
+        console.log(favMovies);
+        setfavMovies(docc.data());
+      }
+    });
+  }
+
   const [count, setNext] = useState(1);
 
   function handleButtonCLickNext() {
@@ -24,7 +48,7 @@ const Home: NextPage = () => {
   }
 
   function handleButtonCLickBack() {
-    setNext((previousState) => previousState - 1);
+    setNext((previousState) => Math.max(previousState - 1, 1));
   }
 
   function updateAPI() {
@@ -81,7 +105,8 @@ const Home: NextPage = () => {
       <header className={styles.head}>
         <ul className={styles.hr}>
           <li>
-            <Link href="/">Home</Link>
+            {/* <button onClick={() => {router.push('/')}}></button> */}
+            <Link href="/testing">Home</Link>
           </li>
           <li>
             <Link href="/favourites">Favorites</Link>
@@ -89,9 +114,7 @@ const Home: NextPage = () => {
         </ul>
         <img src="../InnoPoisk.svg" alt="InnoPoisk" />
         <div className={styles.right}>
-          {/* <input type="text" placeholder="Search..." className={styles.search}/> */}
-
-          <form onSubmit={handleOnSubmit}>
+          <form className={styles.search} onSubmit={handleOnSubmit}>
             <input
               type="text"
               placeholder="Search..."
@@ -99,23 +122,68 @@ const Home: NextPage = () => {
               onChange={handleOnChange}
             />
           </form>
-          <Link className={styles.btn} href="/registration">
-            <img src="../user.png" alt="" />
-          </Link>
+          {/* <Link className={styles.btn} href="/registration"> */}
+          {/* <img src="../user.png" alt="" /> */}
+          {/* </Link> */}
+          {isSignedIn && (
+            <Link href="/settings">
+              <button type="button" className={styles.loginbtn}>
+                Settings
+              </button>
+            </Link>
+          )}
+          {!isSignedIn && (
+            <Link href="/signin">
+              <button type="button" className={styles.loginbtn}>
+                Sign in
+              </button>
+            </Link>
+          )}
+          {isSignedIn && (
+            <Link href="/">
+              <button
+                onClick={(e) => {
+                  setIsSignedIn("");
+                  setfavMovies({});
+                  console.log(e);
+                }}
+                type="button"
+                className={styles.loginbtn}
+              >
+                Log out
+              </button>
+            </Link>
+          )}
         </div>
       </header>
-      <div className={styles.movie_container}>
-        {movies.length > 0 &&
-          movies.map((movie) => <Movie key={movie.filmId} {...movie} />)}
-      </div>
-      <div className={styles.container}>
-        <button type="button" onClick={handleButtonCLickBack}>
-          back
-        </button>
-        <p>{count}</p>
-        <button type="button" onClick={handleButtonCLickNext}>
-          next
-        </button>
+      <div className={styles.body}>
+        <div className={styles.movie_container}>
+          {movies.length > 0 &&
+            movies.map((movie) => (
+              <Movie
+                setfavMovies={setfavMovies}
+                key={movie.filmId}
+                {...movie}
+                fav={
+                  favMovies &&
+                  movie.nameRu in favMovies &&
+                  favMovies[movie.nameRu]
+                }
+              />
+            ))}
+        </div>
+
+        <div className={styles.containerNavigation}>
+          {count !== 1 && (
+            <button type="button" onClick={handleButtonCLickBack}>
+              back
+            </button>
+          )}
+          <p>{count}</p>
+          <button type="button" onClick={handleButtonCLickNext}>
+            next
+          </button>
+        </div>
       </div>
     </div>
   );
