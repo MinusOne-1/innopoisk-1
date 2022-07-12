@@ -25,3 +25,18 @@
   text-align: center;
   align-content: center;
 }
+.container button {
+
+  background: none;
+  border: none;
+}
+.info img{
+  width: 25px;
+  margin-left: 15px;
+  margin-top: 8px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+    <list default="true" id="fec91a7a-2410-477f-acd1-05e38d1ed1ab" name="Changes" comment="add: fix separate movie page">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/dataAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/API/dataAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/movies/Info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/movies/Info.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/movieInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/movieInfo.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +38,6 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -205,8 +209,9 @@
     <MESSAGE value="fix: code formatting" />
     <MESSAGE value="add: favourites layout" />
     <MESSAGE value="refactor: menu layout and navigation by pages styles" />
-
-    
-
+    <MESSAGE value="add: UI for movie page" />
+    <MESSAGE value="add: add unrendered files" />
+    <MESSAGE value="add: fix separate movie page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: fix separate movie page" />
   </component>
 </project>

@@ -48,7 +48,49 @@ export default function Info({
     <div className={styles.container}>
       <img src={posterUrl} alt={nameRu} />
       <div className={styles.info}>
+        <div className={styles.header}>
         <h1>{nameRu}</h1>
+        {!fav && (
+            <button
+                onClick={(event) => {
+                  if (isSignedIn) setFav(true);
+                  else {
+                    alert("Sign in please");
+                    return;
+                  }
+                  if(nameRu){
+                    setDoc(
+                        doc(db, isSignedIn),
+                        {
+                          [nameRu]: true,
+                        },
+                        { merge: true },
+                    );
+                  }
+                }}
+            >
+              <img src="../heart_nofill.png" alt="heart" />
+            </button>
+        )}
+        {fav && (
+            <button
+                onClick={(event) => {
+                  setFav(false);
+                  if(nameRu){
+                    setDoc(
+                        doc(db, isSignedIn),
+                        {
+                          [nameRu]: false,
+                        },
+                        { merge: true },
+                    );
+                  }
+                }}
+            >
+              <img className={styles.heart} src="../heart.png" alt="heart" />
+            </button>
+        )}
+        </div>
         <h2> About movie</h2>
         <div className={styles.general}>
           <div>
@@ -64,48 +106,9 @@ export default function Info({
             <p>{description}</p>
           </div>
 
-          {!fav && (
-            <button
-              onClick={(event) => {
-                if (isSignedIn) setFav(true);
-                else {
-                  alert("Sign in please");
-                  return;
-                }
-                if(nameRu){
-                setDoc(
-                  doc(db, isSignedIn),
-                  {
-                    [nameRu]: true,
-                  },
-                  { merge: true },
-                );
-                }
-              }}
-            >
-              <img src="../heart_nofill.png" alt="heart" />
-            </button>
-          )}
-          {fav && (
-            <button
-              onClick={(event) => {
-                setFav(false);
-                if(nameRu){
-                setDoc(
-                  doc(db, isSignedIn),
-                  {
-                    [nameRu]: false,
-                  },
-                  { merge: true },
-                );
-                }
-              }}
-            >
-              <img src="../heart.png" alt="heart" />
-            </button>
-          )}
+
           <div>
-            {webUrl&&<a href={webUrl.toString()}>Link</a>}
+            {webUrl&&<a href={webUrl.toString()}>Link to KinoPoisk</a>}
           </div>
         </div>
       </div>
